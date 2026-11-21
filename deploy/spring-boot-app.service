@@ -1,0 +1,14 @@
+[Unit]
+Description=Codomax AWS EC2 Spring Boot Web Application
+After=network.target
+
+[Service]
+User=ec2-user
+WorkingDirectory=/opt/aws-iam-ec2-web-deployment
+ExecStart=/usr/bin/java -jar /opt/aws-iam-ec2-web-deployment/aws-iam-ec2-web-deployment.jar
+SuccessExitStatus=143
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
